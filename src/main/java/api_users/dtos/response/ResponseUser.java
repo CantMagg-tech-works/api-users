@@ -10,9 +10,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseSaveUser implements Serializable {
+public class ResponseUser implements Serializable {
 
-  private String username;
-  private String phone;
+   private String username;
+   private String email;
+   private String phone;
 
 }

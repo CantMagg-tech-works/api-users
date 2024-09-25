@@ -33,7 +33,7 @@ public class UserModel {
   @Column(name = "email")
   private String email;
   @Column(name = "phone")
-  private Integer phone;
+  private String phone;
   @Column(name = "creation_date")
   private Date creationDate;
   @Column(name = "deleted_at")

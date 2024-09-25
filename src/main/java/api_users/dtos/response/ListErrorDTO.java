@@ -1,6 +1,7 @@
 package api_users.dtos.response;
 
 import java.io.Serializable;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,9 +11,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseSaveUser implements Serializable {
+public class ListErrorDTO implements Serializable {
 
-  private String username;
-  private String phone;
+  private ErrorDTO error;
+  private List<String> errors;
 
 }

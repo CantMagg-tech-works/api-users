@@ -10,22 +10,25 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        default_schema: api_users
 
   security:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://127.0.0.1:9001/oauth2/jwks
+          jwk-set-uri: ${JWT_SET_URI}
 
 server:
   port: ${PORT}
-
-jwt:
-  secret: ${JWT_SECRET}
 
 logging:
   level:
     org.springframework.security: DEBUG
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 
+flyway:
+  schemas: api_users
+  table: flyway_schema_history_api-users

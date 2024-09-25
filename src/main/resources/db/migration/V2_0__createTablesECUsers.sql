@@ -1,5 +1,3 @@
-create schema api_users;
-
 SET search_path TO api_users;
 
 CREATE TABLE IF NOT EXISTS ec_user (

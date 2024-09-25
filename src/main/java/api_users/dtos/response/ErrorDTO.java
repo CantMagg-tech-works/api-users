@@ -1,7 +1,6 @@
 package api_users.dtos.response;
 
 import java.io.Serializable;
-import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,10 +10,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ResponseUsers implements Serializable {
+public class ErrorDTO implements Serializable {
 
-   private UUID id;
-   private String username;
-   private Integer role;
-   private Boolean valid;
+  private String code;
+  private String message;
+  private Integer status;
+
 }
