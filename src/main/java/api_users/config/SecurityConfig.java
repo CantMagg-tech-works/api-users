@@ -1,5 +1,6 @@
 package api_users.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -14,6 +15,9 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+
+  @Value("${JWT_SET_URI}")
+  private String jwtSetUri;
 
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -32,8 +36,7 @@ public class SecurityConfig {
 
   @Bean
   public JwtDecoder jwtDecoder() {
-    String jwkSetUri = "http://127.0.0.1:9001/oauth2/jwks";
-    return NimbusJwtDecoder.withJwkSetUri(jwkSetUri).build();
+    return NimbusJwtDecoder.withJwkSetUri(jwtSetUri).build();
   }
 }
 
