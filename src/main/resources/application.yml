@@ -10,7 +10,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-
   security:
     oauth2:
       resourceserver:
@@ -32,3 +31,16 @@ eureka:
 flyway:
   schemas: api_users
   table: flyway_schema_history_api-users
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+
+my:
+  openapi:
+    uri: ${OPEN_API_URI}
+
