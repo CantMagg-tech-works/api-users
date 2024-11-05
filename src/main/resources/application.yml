@@ -43,4 +43,3 @@ springdoc:
 my:
   openapi:
     uri: ${OPEN_API_URI}
-

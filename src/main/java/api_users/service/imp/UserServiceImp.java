@@ -28,12 +28,12 @@ public class UserServiceImp implements UserService {
       String userRole, String email) {
 
     if (userRepository.existsByUsername(requestSaveUser.getUsername().trim())) {
-      throw new RepeatUsernameException(UserError.USER_ERROR_001.getDescription());
+      throw new RepeatUsernameException(UserError.USER_ERROR_0001.getDescription());
     }
     if (userRepository.existsByUserId(UUID.fromString(userId))) {
-      throw new UsernameAlreadyAssignedException(UserError.USER_ERROR_003.getDescription());
+      throw new UsernameAlreadyAssignedException(UserError.USER_ERROR_0003.getDescription());
     }
-    UserModel userModel =UserModel.builder()
+    UserModel userModel = UserModel.builder()
         .username(requestSaveUser.getUsername().trim())
         .phone(requestSaveUser.getPhone().trim())
         .userId(UUID.fromString(userId))
@@ -52,6 +52,7 @@ public class UserServiceImp implements UserService {
 
     return ResponseGetAllUsers.builder().users(userMapper.toResponseUsersList(userModels)).build();
   }
+
 }
 
 
