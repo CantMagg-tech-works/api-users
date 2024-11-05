@@ -20,10 +20,10 @@ public class GlobalHandlers {
 
   @ExceptionHandler(RepeatUsernameException.class)
   public ResponseEntity<ErrorDTO> repeatUserHandler(RepeatUsernameException e) {
-    log.error(UserError.USER_ERROR_001.getDescription(), e);
+    log.error(UserError.USER_ERROR_0001.getDescription(), e);
     ErrorDTO error = ErrorDTO.builder()
-        .code(UserError.USER_ERROR_001.name())
-        .message(UserError.USER_ERROR_001.getDescription())
+        .code(UserError.USER_ERROR_0001.name())
+        .message(UserError.USER_ERROR_0001.getDescription())
         .status(HttpStatus.BAD_REQUEST.value())
         .build();
     return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
@@ -34,10 +34,10 @@ public class GlobalHandlers {
       List<String> errors = e.getBindingResult().getFieldErrors().stream().map(
           DefaultMessageSourceResolvable::getDefaultMessage).toList();
 
-      log.error(UserError.USER_ERROR_002.getDescription(), e);
+      log.error(UserError.USER_ERROR_0002.getDescription(), e);
       ErrorDTO error = ErrorDTO.builder()
-          .code(UserError.USER_ERROR_002.name())
-          .message(UserError.USER_ERROR_002.getDescription())
+          .code(UserError.USER_ERROR_0002.name())
+          .message(UserError.USER_ERROR_0002.getDescription())
           .status(HttpStatus.BAD_REQUEST.value())
           .build();
 
@@ -50,10 +50,10 @@ public class GlobalHandlers {
 
   @ExceptionHandler(UsernameAlreadyAssignedException.class)
   public ResponseEntity<ErrorDTO> usernameAlreadyAssignedHandler(UsernameAlreadyAssignedException e) {
-    log.error(UserError.USER_ERROR_003.getDescription(), e);
+    log.error(UserError.USER_ERROR_0003.getDescription(), e);
     ErrorDTO error = ErrorDTO.builder()
-        .code(UserError.USER_ERROR_003.name())
-        .message(UserError.USER_ERROR_003.getDescription())
+        .code(UserError.USER_ERROR_0003.name())
+        .message(UserError.USER_ERROR_0003.getDescription())
         .status(HttpStatus.BAD_REQUEST.value())
         .build();
     return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
